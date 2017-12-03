@@ -1,1 +1,315 @@
-﻿
+---------------------------------
+02-12-2017 23:53:31
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: 
+Марка автомобиля: ВАЗ
+---------------------------------
+03-12-2017 00:38:45
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: 
+Марка автомобиля: ВАЗ
+---------------------------------
+03-12-2017 00:50:02
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: 
+Марка автомобиля: ВАЗ
+---------------------------------
+03-12-2017 01:14:22
+Имя пользователя: Яков
+Адрес email: yakoffka@mail.ru
+Сообщение: 
+---------------------------------
+03-12-2017 01:27:04
+Имя пользователя: Яков
+Адрес email: yakoffka@mail.ru
+Сообщение: необязательное поле
+---------------------------------
+03-12-2017 05:32:33
+Имя пользователя: Яков
+Адрес email: yakoffka@mail.ru
+Сообщение: необязательное поле
+---------------------------------
+03-12-2017 05:34:34
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: -
+Марка автомобиля: ВАЗ
+---------------------------------
+03-12-2017 06:57:43
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: -
+Марка автомобиля: ВАЗ2
+$attachment['full_patch_attfile']=manual_backup.png
+$attachment['full_patch_attfile']=
+$attachment['full_patch_attfile']=
+$attachment['full_patch_attfile']=
+$attachment['full_patch_attfile']=/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a237636deb856.13332131/manual_backup.png
+$attachment['full_patch_attfile']=
+$attachment['full_patch_attfile']=
+$attachment['full_patch_attfile']=
+$attachment['full_patch_attfile']=dir_5a237636deb856.13332131/manual_backup.png
+Файлы: 
+
+/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a237636deb856.13332131/manual_backup.png
+
+---------------------------------
+03-12-2017 06:59:31
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: -
+Марка автомобиля: ВАЗ2
+$attachment['name_attfile']=manual_backup.png
+$attachment['full_patch_attfile']=
+$attachment['rel_patch_attfile']=
+$attachment['name_attfile']=
+$attachment['full_patch_attfile']=/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a2376a3910d07.70534989/manual_backup.png
+$attachment['rel_patch_attfile']=
+$attachment['name_attfile']=
+$attachment['full_patch_attfile']=
+$attachment['rel_patch_attfile']=dir_5a2376a3910d07.70534989/manual_backup.png
+Файлы: 
+
+/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a2376a3910d07.70534989/manual_backup.png
+
+---------------------------------
+03-12-2017 07:04:12
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: -
+Марка автомобиля: ВАЗ2
+$attachment['name_attfile']=manual_backup.png
+$attachment['full_patch_attfile']=/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a2377bc4ba406.22067698/manual_backup.png
+$attachment['rel_patch_attfile']=dir_5a2377bc4ba406.22067698/manual_backup.png
+Файлы: 
+/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a2377bc4ba406.22067698/manual_backup.png
+---------------------------------
+03-12-2017 07:06:26
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: -
+Марка автомобиля: ВАЗ
+$attachment['name_attfile']=manual_backup3_2.png
+$attachment['full_patch_attfile']=/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a2378424f6238.76352413/manual_backup3_2.png
+$attachment['rel_patch_attfile']=src/feedback/uploads/dir_5a2378424f6238.76352413/manual_backup3_2.png
+Файлы: 
+/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a2378424f6238.76352413/manual_backup3_2.png
+---------------------------------
+03-12-2017 07:28:37
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: -
+Марка автомобиля: ВАЗ
+$attachment['name_attfile']=manual_backup3.png
+$attachment['full_patch_attfile']=/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a237d75c87a65.29255007/manual_backup3.png
+$attachment['rel_patch_attfile']=src/feedback/uploads/dir_5a237d75c87a65.29255007/manual_backup3.png
+Файлы: 
+/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a237d75c87a65.29255007/manual_backup3.png
+---------------------------------
+03-12-2017 07:54:39
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: -
+Марка автомобиля: ВАЗ
+$attachment['name_attfile']=manual_backup3_2.png
+$attachment['full_patch_attfile']=/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a23838fe55318.75278129/manual_backup3_2.png
+$attachment['rel_patch_attfile']=src/feedback/uploads/dir_5a23838fe55318.75278129/manual_backup3_2.png
+Файлы: 
+/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a23838fe55318.75278129/manual_backup3_2.png
+---------------------------------
+03-12-2017 07:57:40
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: -
+Марка автомобиля: ВАЗ
+---------------------------------
+03-12-2017 08:04:52
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: -
+Марка автомобиля: ВАЗ
+$attachment['name_attfile']=manual_backup3_2.png
+$attachment['full_patch_attfile']=/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a2385f45e1bd1.04006414/manual_backup3_2.png
+$attachment['rel_patch_attfile']=src/feedback/uploads/dir_5a2385f45e1bd1.04006414/manual_backup3_2.png
+Файлы: 
+/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a2385f45e1bd1.04006414/manual_backup3_2.png
+---------------------------------
+03-12-2017 08:06:24
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: -
+Марка автомобиля: ВАЗ
+---------------------------------
+03-12-2017 08:41:35
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: -
+Марка автомобиля: ВАЗ
+---------------------------------
+03-12-2017 08:51:39
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: -
+Марка автомобиля: ВАЗ
+---------------------------------
+03-12-2017 08:58:51
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: -
+Марка автомобиля: ВАЗ
+---------------------------------
+03-12-2017 09:01:44
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: -
+Марка автомобиля: ВАЗ
+---------------------------------
+03-12-2017 09:03:29
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: -
+Марка автомобиля: ВАЗ
+---------------------------------
+03-12-2017 09:09:19
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: -
+Марка автомобиля: ВАЗ
+---------------------------------
+03-12-2017 09:11:50
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: -
+Марка автомобиля: ВАЗ
+---------------------------------
+03-12-2017 09:12:26
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: -
+Марка автомобиля: ВАЗ
+$attachment['name_attfile']=manual_backup.png
+$attachment['full_patch_attfile']=/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a2395cac770e0.57859434/manual_backup.png
+$attachment['rel_patch_attfile']=src/feedback/uploads/dir_5a2395cac770e0.57859434/manual_backup.png
+Файлы: 
+/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a2395cac770e0.57859434/manual_backup.png
+---------------------------------
+03-12-2017 09:22:58
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: -
+Марка автомобиля: ВАЗ
+---------------------------------
+03-12-2017 09:27:12
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: -
+Марка автомобиля: ВАЗ
+$attachment['name_attfile']=manual_backup.png
+$attachment['full_patch_attfile']=/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a2399405e9c38.57281347/manual_backup.png
+$attachment['rel_patch_attfile']=src/feedback/uploads/dir_5a2399405e9c38.57281347/manual_backup.png
+Файлы: 
+/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a2399405e9c38.57281347/manual_backup.png
+---------------------------------
+03-12-2017 09:52:34
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: -
+Марка автомобиля: ВАЗ
+$attachment['name_attfile']=manual_backup.png
+$attachment['full_patch_attfile']=/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a239f32a052c9.25456775/manual_backup.png
+$attachment['rel_patch_attfile']=src/feedback/uploads/dir_5a239f32a052c9.25456775/manual_backup.png
+$attachment['name_attfile']=manual_backup3_2.png
+$attachment['full_patch_attfile']=/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a239f32a06191.67760477/manual_backup3_2.png
+$attachment['rel_patch_attfile']=src/feedback/uploads/dir_5a239f32a06191.67760477/manual_backup3_2.png
+$attachment['name_attfile']=manual_backup3_2.png
+$attachment['full_patch_attfile']=/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a239f32a06a63.06213505/manual_backup3_2.png
+$attachment['rel_patch_attfile']=src/feedback/uploads/dir_5a239f32a06a63.06213505/manual_backup3_2.png
+Файлы: 
+/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a239f32a052c9.25456775/manual_backup.png
+/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a239f32a06191.67760477/manual_backup3_2.png
+/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a239f32a06a63.06213505/manual_backup3_2.png
+---------------------------------
+03-12-2017 09:56:10
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: -
+Марка автомобиля: ВАЗ
+$attachment['name_attfile']=manual_backup3.png
+$attachment['full_patch_attfile']=/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a23a00a025188.86349928/manual_backup3.png
+$attachment['rel_patch_attfile']=src/feedback/uploads/dir_5a23a00a025188.86349928/manual_backup3.png
+Файлы: 
+/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a23a00a025188.86349928/manual_backup3.png
+---------------------------------
+03-12-2017 09:59:38
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: -
+Марка автомобиля: ВАЗ
+$attachment['name_attfile']=manual_backup3_2.png
+$attachment['full_patch_attfile']=/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a23a0da7aeb61.49910884/manual_backup3_2.png
+$attachment['rel_patch_attfile']=src/feedback/uploads/dir_5a23a0da7aeb61.49910884/manual_backup3_2.png
+Файлы: 
+/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a23a0da7aeb61.49910884/manual_backup3_2.png
+---------------------------------
+03-12-2017 10:25:54
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: -
+Марка автомобиля: ВАЗ
+---------------------------------
+03-12-2017 10:27:35
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: -
+Марка автомобиля: ВАЗ
+Файлы: 
+/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a23a76720c231.83114723/manual_backup.png
+---------------------------------
+03-12-2017 10:32:24
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: -
+Марка автомобиля: ВАЗ
+Файлы: 
+/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a23a8887ebd51.53785974/manual_backup.png
+---------------------------------
+03-12-2017 10:34:28
+Имя пользователя: Яков
+Телефон: 79280000000
+Адрес email: yakoffka@mail.ru
+Сообщение: -
+Марка автомобиля: ВАЗ
+Файлы: 
+/home/truck/web/yugautotruck.dragoon.pw/public_html/src/feedback/uploads/dir_5a23a903bdbbe3.04449518/manual_backup.png

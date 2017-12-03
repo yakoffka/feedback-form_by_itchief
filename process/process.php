@@ -1,6 +1,7 @@
 <?php
 // подключаем файл настроек
-require_once dirname(__FILE__) . '/process_settings.php';
+// require_once dirname(__FILE__) . '/process_settings.php';
+require_once('../config.php');
 // открываем сессию
 session_start();
 // вводим переменную, содержащую основной статус обработки формы
