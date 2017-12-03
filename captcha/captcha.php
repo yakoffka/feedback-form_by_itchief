@@ -11,10 +11,14 @@ if (isset($_GET['id'])) {
 
 // присваиваем PHP переменной captchastring строку символов
 	
-	if(FORM_DEBUG===TRUE){// присвоение плейсхолдеров в режиме отладки
+	if(FORM_DEBUG===TRUE){// присвоение captchastring в режиме отладки
 		$captchastring = 'aaaaaa';
-	}else{// присвоение плейсхолдеров в боевом режиме
-		$captchastring = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnopqrstuvwxyz';
+	}else{// присвоение captchastring в боевом режиме
+		if(CAPCHA_MODE==='soft'){
+			$captchastring = '1234567890abcdefghijklmnopqrstuvwxyz';
+		}elseif(CAPCHA_MODE==='hard'){
+			$captchastring = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnopqrstuvwxyz';
+		}
 	}
 
 
