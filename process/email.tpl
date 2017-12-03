@@ -1,43 +1,45 @@
-<table style="background-color: #f1f1f1; width:100%; align="
-       center" width="100%" border="0" cellpadding="0" cellspacing="0">
-<tbody>
-<tr>
-    <td align="center" style="vertical-align:top;padding:30px 0;text-align:center">
-        <table style="text-align:left; width:680px; margin:0 auto; font-size:14px; border-spacing:0px">
-            <tbody>
-            <tr>
-                <td bgcolor="#fff" style="padding: 15px;">
-                    <font color="#777" style="font-size:18px">%email.title%</font>
-                </td>
-            </tr>
-            <tr>
-                <td height="25"></td>
-            </tr>
-            <tr>
-                <td bgcolor="#fff" style="padding: 15px;">
-                
-                    Пользователь <b>%email.nameuser%</b> оставил следующее сообщение:<br>
-                    %email.message%
-                    <hr>
-                    Файлы:<br>
-                    %email.attachments%
-                    <hr>
-                    Email пользователя: <b>%email.emailuser%</b><br>
-                    Дата отправки: <b>%email.date%</b>
-                    
-                </td>
-            </tr>
-            <tr>
-                <td height="25"></td>
-            </tr>
-            <tr>
-                <td bgcolor="#fff" style="padding: 20px 15px; color: #777; font-size: 14px;">
-                    <p>&copy; 2017 Мой сайт.</p>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </td>
-</tr>
-</tbody>
+<h2 style="color:#0f94d7;text-align:center;">%email.title%</h2>
+
+<table style="width:100%;padding:0 15% 1em;">
+	<tr>
+		<td colspan="2" style="background-color:#0f94d7;text-align:left;padding:0 1em;color:#fff;">описание узла или агрегата:</td>
+	</tr>
+	<tr>
+		<td colspan="2" style="margin:0 1em;text-align:left;border-bottom:1px dotted #0f94d7;">%email.additional_field%</td>
+	</tr>
+	<tr>
+		<td style="margin:0 1em;text-align:left;border-bottom:1px dotted #0f94d7;">прикрепленные файлы:</td>
+		<td style="margin:0 1em;text-align:right;border-bottom:1px dotted #0f94d7;">%email.is_attach%</td>
+	</tr>
+	<tr>
+		<td colspan="2" style="background-color:#0f94d7;text-align:left;padding:0 1em;color:#fff;">информация о ТС:</td>
+	</tr>
+	<tr>
+		<td style="margin:0 1em;text-align:left;border-bottom:1px dotted #0f94d7;">марка автомобиля:</td>
+		<td style="margin:0 1em;text-align:right;border-bottom:1px dotted #0f94d7;">%email.car_brand%</td>
+	</tr>
+	<tr>
+		<td style="margin:0 1em;text-align:left;border-bottom:1px dotted #0f94d7;">VIN автомобиля:</td>
+		<td style="margin:0 1em;text-align:right;border-bottom:1px dotted #0f94d7;">%email.vehicle_identification_number%</td>
+	</tr>
+	<tr>
+		<td colspan="2" style="background-color:#0f94d7;text-align:left;padding:0 1em;color:#fff;">контактные данные заказчика:</td>
+	</tr>
+	<tr>
+		<td style="margin:0 1em;text-align:left;border-bottom:1px dotted #0f94d7;">имя:</td>
+		<td style="margin:0 1em;text-align:right;border-bottom:1px dotted #0f94d7;">%email.nameuser%</td>
+	</tr>
+	<tr>
+		<td style="margin:0 1em;text-align:left;border-bottom:1px dotted #0f94d7;">телефон заказчика:</td>
+		<td style="margin:0 1em;text-align:right;border-bottom:1px dotted #0f94d7;">%email.phone%</td>
+	</tr>
+	<tr>
+		<td style="margin:0 1em;text-align:left;border-bottom:1px dotted #0f94d7;">email заказчика:</td>
+		<td style="margin:0 1em;text-align:right;border-bottom:1px dotted #0f94d7;">%email.emailuser%</td>
+	</tr>
+	<tr>
+		<td colspan="2" style="background-color:#0f94d7;text-align:center;color:#fff;">дата и время оформления заявки: %email.date%</td>
+	</tr>
 </table>
+
+<p style="text-align:center;"><a style="text-decoration:none!important;" href='http://yugautotruck.dragoon.pw'>%email.year% &copy; ООО ЮгАвтоТрак +7(863)269-13-78.</a></p>
