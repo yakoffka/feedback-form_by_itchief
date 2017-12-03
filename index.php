@@ -6,6 +6,8 @@
 	<link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="vendors/jgrowl/jquery.jgrowl.min.css">
 	<link rel="stylesheet" href="css/main.css">
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -48,16 +50,14 @@ if(FORM_DEBUG===TRUE){
 					<div class="panel-body">
 
 						<!-- Форма обратной связи -->
-						<form id="feedbackForm" action="process/process.php" enctype="multipart/form-data"
-								novalidate>
+						<form id="feedbackForm" action="process/process.php" enctype="multipart/form-data" novalidate>
 							<div class="row">
 
 								<div class="col-sm-4">
 									<!-- Имя пользователя -->
 									<div class="form-group has-feedback">
 										<label for="name" class="control-label">Имя *</label>
-										<input id="name" type="text" name="name" class="form-control"
-											value="<?php echo "$val_name";?>" placeholder="Имя" minlength="2" required="required">
+										<input id="name" type="text" name="name" class="form-control" value="<?php echo "$val_name";?>" placeholder="Имя" minlength="2" required="required">
 										<span class="glyphicon form-control-feedback"></span>
 									</div>
 								</div>
@@ -133,8 +133,7 @@ if(FORM_DEBUG===TRUE){
 
 							<!-- Капча -->
 							<div class="captcha">
-								<img class="img-captcha" src="captcha/captcha.php"
-									data-src="captcha/captcha.php">
+								<img class="img-captcha" src="captcha/captcha.php" data-src="captcha/captcha.php">
 								<div class="btn btn-default refresh-captcha"><i class="glyphicon glyphicon-refresh"></i>
 									Обновить
 								</div>
@@ -158,15 +157,12 @@ if(FORM_DEBUG===TRUE){
 							</div>
 
 							<!-- Кнопка для отправки формы -->
-							<button type="submit" class="btn btn-success pull-right" disabled="disabled">Отправить
-								сообщение
-							</button>
+							<button type="submit" class="btn btn-success pull-right" disabled="disabled">Отправить сообщение</button>
 
 							<!-- Индикация загрузки данных формы на сервер -->
 							<div class="clearfix"></div>
 							<div class="progress" style="display:none; margin-top: 20px;">
-								<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar"
-									 aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0">
+								<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0">
 									<span class="sr-only">0%</span>
 								</div>
 							</div>
