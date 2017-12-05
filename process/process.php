@@ -129,18 +129,28 @@ if (isset($_POST['captcha']) && isset($_SESSION['captcha'])) {
 
 // валидация файлов
 if (isset($_FILES['attachment'])) {
+	// $data['info'][] = '$_FILES[\'attachment\'] isset';
+	// $data['result'] = 'error';
 	// перебор массива $_FILES['attachment']
 	foreach ($_FILES['attachment']['error'] as $key => $error) {
+		// $data['info'][] = "\$error='$error'";
+		// $data['result'] = 'error';
 		// если файл был успешно загружен на сервер (ошибок не возникло), то...
 		if ($error == UPLOAD_ERR_OK) {
+			// $data['info'][] = "\$error == UPLOAD_ERR_OK";
+			// $data['result'] = 'error';
 			// получаем имя файла
 			$fileName = $_FILES['attachment']['name'][$key];
+			// $data['info'][] = "\$fileName = $fileName";
+			// $data['result'] = 'error';
 			// получаем расширение файла в нижнем регистре
 			$fileExtension = mb_strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
 			// получаем размер файла
 			$fileSize = $_FILES['attachment']['size'][$key];
 			// результат проверки расширения файла
 			$resultCheckExtension = true;
+			// $data['info'][] = "\$resultCheckExtension = $resultCheckExtension";
+			// $data['result'] = 'error';
 			// проверяем расширение загруженного файла
 			if (!in_array($fileExtension, $allowedExtensions)) {
 				$resultCheckExtension = false;
@@ -158,8 +168,11 @@ if (isset($_FILES['attachment'])) {
 		}
 	}
 	
+
 	// если ошибок валидации не возникло, то...
 	if ($data['result'] == 'success') {
+		// $data['info'][] = "\$data['result'] = ".$data['result'];
+		// $data['result'] = 'error';
 		// присвоим значение переменной, сигнализирующей о наличии прикрепленных файлов
 		$is_attach="присутствуют";
 		// переменная для хранения имён файлов
@@ -182,10 +195,15 @@ if (isset($_FILES['attachment'])) {
 				// $data['info'][] = "\$path_rand_dir='$path_rand_dir';";
 				// $data['result'] = 'error';
 
+
 			// создаем директорию с уникальным именем
 			if(!mkdir($path_rand_dir, 0700)){
 				$data['info'][] = 'Ошибка '.__line__.' при загрузке файлов';
+				$data['info'][] = "директория $path_rand_dir не создана";
 				$data['result'] = 'error';
+			}else{
+				// $data['info'][] = "директория $path_rand_dir создана";
+				// $data['result'] = 'error';
 			}
 			
 			// перемещаем файл в созданную директорию
@@ -200,13 +218,18 @@ if (isset($_FILES['attachment'])) {
 				$arr_attach_file['rel_patch_attfile'] = "$relPatchUploads$name_rand_dir/$fileName";// относительный путь к файлу от корня сайта
 				$attachments[]=$arr_attach_file;
 				
-				// $data['info'][] = "\$attachments[]['full_patch_attfile']=".$attachments[]['name_attfile'];
-				// $data['info'][] = "\$attachments[]['full_patch_attfile']=".$attachments[]['full_patch_attfile'];
-				// $data['info'][] = "\$attachments[]['full_patch_attfile']=".$attachments[]['rel_patch_attfile'];
+				// $data['info'][] = "\$arr_attach_file['name_attfile']=".$arr_attach_file['name_attfile'];
+				// $data['info'][] = "\$arr_attach_file['full_patch_attfile']=".$arr_attach_file['full_patch_attfile'];
+				// $data['info'][] = "\$arr_attach_file['rel_patch_attfile']=".$arr_attach_file['rel_patch_attfile'];
 				// $data['result'] = 'error';
 			}
 		}
+	}else{
+		// $data['info'][] = "\$data['result'] = ".$data['result'];
+		// $data['result'] = 'error';
 	}
+	// $data['info'][] = "\$data['result'] = ".$data['result'];
+	// $data['result'] = 'error';
 }
 // /валидация формы
 //--------------------------------------------------------------------------------------------------
