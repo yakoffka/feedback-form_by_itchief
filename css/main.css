@@ -1,5 +1,6 @@
 .center{margin:0 auto;width:900px;}
-
+.warning_feedback,.alert_feedback{text-align:center;padding:.5em 0;color:#fff;background-color:orange;}
+.alert_feedback{background-color:red;}
 
 .panel-success {
     border-color: #29b74e;

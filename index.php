@@ -14,7 +14,16 @@
 
 <?php
 // подключаем конфигурационный файл:
-require_once('config.php');
+$file_templ_conf='config.php.template';
+$file_conf='config.php';
+if(file_exists($file_conf)){
+	require_once($file_conf);
+}elseif(file_exists($file_templ_conf)){
+	echo "<h3 class='warning_feedback'>пожалуйста переименуйте файл '$file_templ_conf' в '$file_conf' и произведите в нем необходимые настройки.</h2>";
+}else{
+	echo "<h3 class='alert_feedback'>не найден конфигурационный файл. пожалуйста перезалейте скрипт.</h2>";
+}
+
 
 // присвоение плейсхолдеров при включенном режим отладки
 if(FORM_DEBUG===TRUE){

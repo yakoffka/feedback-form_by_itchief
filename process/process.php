@@ -279,6 +279,14 @@ if ($data['result'] == 'success') {
 	$mail = new PHPMailer;
 	$mail->CharSet = 'UTF-8';
 	$mail->IsHTML(true);  // формат HTML
+	
+	
+	//Вот это да! Идеально, Вы можете отправлять
+	//Результат :
+	//9.4/10
+	$textBody = 'добавим текстовую версию вашего сообщения..';// добавим текстовую версию вашего сообщения
+	$mail->AltBody = $textBody;// добавим текстовую версию вашего сообщения
+	
 	$fromName = '=?UTF-8?B?'.base64_encode(MAIL_FROM_NAME).'?=';
 	$mail->setFrom(MAIL_FROM, $fromName);
 	$mail->Subject = '=?UTF-8?B?'.base64_encode(MAIL_SUBJECT).'?=';

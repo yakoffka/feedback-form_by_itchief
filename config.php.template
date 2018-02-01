@@ -22,22 +22,20 @@
 	//yo путь к рандомным директориям от корня сайта ПОПРАВИТЬ!!!
 	$relPatchUploads = 'src/feedback/uploads/';
 	// email отправителя
-	// const MAIL_FROM = 'no-reply@кириллица.рф.dragoon.pw';
 	// const MAIL_FROM = 'no-reply@'.$_SERVER['HTTP_HOST'];
 	define("MAIL_FROM",'no-reply@'.$_SERVER['HTTP_HOST']);
 	// имя отправителя
-	const MAIL_FROM_NAME = 'ЮгАвтоТрак';
+	const MAIL_FROM_NAME = 'Название Фирмы';
 	// тема письма
-	const COMPANY = 'ООО ЮгАвтоТрак';
+	const COMPANY = 'Наименование Фирмы';
 	// тема письма
 	const PHONE = '+7(863)000-00-00';
 	// тема письма
 	// const MAIL_SUBJECT = 'Заявка с сайта '.$_SERVER['HTTP_HOST'];
 	define("MAIL_SUBJECT",'Заявка с сайта '.$_SERVER['HTTP_HOST']);
 	// email адресата
-	//const MAIL_ADDRESS = 'yugautotruck@ya.ru';
-	//const MAIL_ADDRESS = 'yakoffka@mail.ru';
-	const MAIL_ADDRESS = 'web-bwj58@mail-tester.com';// тестирование почты (Проверка тела письма на спам mail-tester.com)
+	//const MAIL_ADDRESS = 'example@example.ru';
+	const MAIL_ADDRESS = 'example@example.ru';// тестирование почты (Проверка тела письма на спам mail-tester.com)
 	$copyright = "<a style='text-decoration:none!important;' href='$startPath'>%email.year% &copy; ".COMPANY." ".PHONE.".</a>
 	";
 	// копирайт в теле письма
