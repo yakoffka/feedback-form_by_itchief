@@ -42,4 +42,5 @@
 	</tr>
 </table>
 
-<p style="text-align:center;"><a style="text-decoration:none!important;" href='http://yugautotruck.dragoon.pw'>%email.year% &copy; ООО ЮгАвтоТрак +7(863)269-13-78.</a></p>
+<!--p style="text-align:center;"><a style="text-decoration:none!important;" href='http://yugautotruck.dragoon.pw'>%email.year% &copy; ООО ЮгАвтоТрак +7(863)269-13-78.</a></p-->
+<p style="text-align:center;">%email.copyright%</p>

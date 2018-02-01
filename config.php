@@ -3,8 +3,8 @@
 //--------------------------------------------------------------------------------------------------
 // в режиме отладки генерируется капча "aaaaaa", всем полям присваивается плейсхолдеры (нет необходимости каждый раз заполнять поля вручную), 
 	// включение/отключение режима отладки
-	// const FORM_DEBUG = TRUE;
-	const FORM_DEBUG = FALSE;
+	const FORM_DEBUG = TRUE;
+	// const FORM_DEBUG = FALSE;
 
 	// настройка режима капчи:
 	const CAPCHA_MODE = 'soft';// только строчные латинские буквы и цифры
@@ -22,15 +22,22 @@
 	//yo путь к рандомным директориям от корня сайта ПОПРАВИТЬ!!!
 	$relPatchUploads = 'src/feedback/uploads/';
 	// email отправителя
-	const MAIL_FROM = 'no-reply@yugautotruck.dragoon.pw';
+	const MAIL_FROM = 'no-reply@кириллица.рф.dragoon.pw';
 	// имя отправителя
 	const MAIL_FROM_NAME = 'ЮгАвтоТрак';
 	// тема письма
-	const MAIL_SUBJECT = 'Заявка с сайта yugautotruck.dragoon.pw';
+	const COMPANY = 'ООО ЮгАвтоТрак';
+	// тема письма
+	const PHONE = '+7(863)000-00-00';
+	// тема письма
+	const MAIL_SUBJECT = 'Заявка с сайта кириллица.рф.dragoon.pw';
 	// email адресата
 	//const MAIL_ADDRESS = 'yugautotruck@ya.ru';
 	const MAIL_ADDRESS = 'yakoffka@mail.ru';
 	// const MAIL_ADDRESS = 'web-a927k@mail-tester.com';// тестирование почты (Проверка тела письма на спам mail-tester.com)
+	$copyright = "<a style='text-decoration:none!important;' href='$startPath'>%email.year% &copy; ".COMPANY." ".PHONE.".</a>
+	";
+	// копирайт в теле письма
 	
 	const MAIL_SUBJECT_CLIENT = 'Ваше сообщение доставлено';// тема письма, отправляемого пользователю для информирования его о доставке сообщения
 

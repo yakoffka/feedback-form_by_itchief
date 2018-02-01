@@ -13,11 +13,11 @@ $uploadPath = dirname(dirname(__FILE__)) . '/uploads/';
 $allowedExtensions = array('gif', 'jpg', 'png');
 
 // от какого email будет отправляться письмо
-const MAIL_FROM = 'no-reply@yugautotruck.dragoon.pw';
+const MAIL_FROM = 'no-reply@кириллица.рф.dragoon.pw';
 // от какого имени будет отправляться письмо
 const MAIL_FROM_NAME = 'ЮгАвтоТрак';
 // тема письма
-const MAIL_SUBJECT = 'Заявка с сайта yugautotruck.dragoon.pw';
+const MAIL_SUBJECT = 'Заявка с сайта кириллица.рф.dragoon.pw';
 // кому необходимо отправить письмо
 const MAIL_ADDRESS = 'yakoffka@mail.ru';
 // const MAIL_ADDRESS = 'web-a927k@mail-tester.com';// тестирование почты (Проверка тела письма на спам)

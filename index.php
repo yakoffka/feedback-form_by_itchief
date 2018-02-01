@@ -11,7 +11,6 @@
 </head>
 <body>
 
-<h1 class="text-center page-header">Форма обратной связи</h1>
 
 <?php
 // подключаем конфигурационный файл:
@@ -38,11 +37,12 @@ if(FORM_DEBUG===TRUE){
 ?>
 
 	<!--div class="container"-->
-	<div class="">
+	<div class="center">
 		<!--div class="row"-->
 		<div class="">
 			<!--div class="col-sm-6 col-sm-offset-3"-->
-			<div class="col-sm-9 w854">
+			<div class="col-sm-9">
+				<h1 class="text-center page-header">Форма обратной связи</h1>
 				<div class="panel panel-success">
 					<div class="panel-heading">
 						<h2 class="h3 panel-title">форма запроса детали по VIN</h2>

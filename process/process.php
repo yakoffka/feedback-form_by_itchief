@@ -271,6 +271,7 @@ if ($data['result'] == 'success') {
 	$bodyMail = str_replace('%email.is_attach%', isset($is_attach) ? $is_attach : ' отсутствуют', $bodyMail);
 	$bodyMail = str_replace('%email.vehicle_identification_number%', isset($vehicle_identification_number) ? $vehicle_identification_number : ' не указан.', $bodyMail);
 	$bodyMail = str_replace('%email.date%', date('d.m.Y H:i'), $bodyMail);
+	$bodyMail = str_replace('%email.copyright%', isset($copyright) ? $copyright : '#', $bodyMail);
 	$bodyMail = str_replace('%email.year%', date('Y'), $bodyMail);
 
 	
@@ -314,6 +315,7 @@ if ($data['result'] == 'success') {
 		$bodyMail = str_replace('%email.is_attach%', isset($is_attach) ? $is_attach : ' отсутствуют', $bodyMail);
 		$bodyMail = str_replace('%email.vehicle_identification_number%', isset($vehicle_identification_number) ? $vehicle_identification_number : ' не указан.', $bodyMail);
 		$bodyMail = str_replace('%email.date%', date('d.m.Y H:i'), $bodyMail);
+		$bodyMail = str_replace('%email.copyright%', isset($copyright) ? $copyright : '#', $bodyMail);
 		$bodyMail = str_replace('%email.year%', date('Y'), $bodyMail);
 		$mail->Subject = MAIL_SUBJECT_CLIENT;
 		$mail->Body = $bodyMail;
