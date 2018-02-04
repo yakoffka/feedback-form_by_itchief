@@ -7,7 +7,25 @@
 	<link rel='stylesheet' href='vendors/jgrowl/jquery.jgrowl.min.css'>
 	<link rel='stylesheet' href='css/dropzone.css'>
 	<link rel='stylesheet' href='css/main.css'>
-
+  <style>
+    .dropzone {
+      border: 2px dashed #0087F7;
+      border-radius: 5px;
+      background: white;
+    }
+    .dropzone .dz-message {
+      text-align: center;
+      margin: 2em 0;
+	  font-size: 20px;
+    }
+    .dz-progress {
+      display: none !important;
+    }
+    .dropzone .dz-preview .dz-image {
+      border-radius: 4px;
+	 }
+  </style>
+	
 	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
 </head>
 <body>
