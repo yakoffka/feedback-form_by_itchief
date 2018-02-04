@@ -211,6 +211,7 @@ if(FORM_DEBUG===TRUE){
 
 	<!--script src='vendors/jquery/jquery-3.2.1.min.js'></script-->
 	<script src='vendors/bootstrap/js/bootstrap.min.js'></script>
+  <script src='js/dropzone.js'></script>
 	<script src='vendors/jgrowl/jquery.jgrowl.min.js'></script>
 	<script src='js/main.js'></script>
 	<!--script src='vendors/mask/jquery.mask.min.js\'></script-->
