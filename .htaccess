@@ -1,1 +1,4 @@
-php_value display_errors 1
+#php_value display_errors 1
+php_value log_errors "On"
+#php_value error_log /var/log/php_feedback_errors.log
+php_value error_log /home/arch/web/xn--80apaahia1b8c.xn--p1ai.dragoon.pw/public_html/logs/php_feedback_errors.log

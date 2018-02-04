@@ -32,7 +32,7 @@ if(FORM_DEBUG===TRUE){
 	$val_email="yakoffka@mail.ru";
 	$val_car_brand="ВАЗ";
 	$val_vin="1ZVHT82H485113456";
-	$val_additional_field="Реле стартера втягивающее WA66-113-SL или аналог";
+	$val_description_goods="Реле стартера втягивающее WA66-113-SL или аналог";
 	$val_captcha="aaaaaa";
 }else{
 	$val_name="";
@@ -40,7 +40,7 @@ if(FORM_DEBUG===TRUE){
 	$val_email="";
 	$val_car_brand="";
 	$val_vin="";
-	$val_additional_field="";
+	$val_description_goods="";
 	$val_captcha="";
 }
 ?>
@@ -59,7 +59,7 @@ if(FORM_DEBUG===TRUE){
 					<div class="panel-body">
 
 						<!-- Форма обратной связи -->
-						<form id="feedbackForm" action="process/process.php" enctype="multipart/form-data" novalidate>
+						<form id="feedbackForm" action="process.php" enctype="multipart/form-data" novalidate>
 							<div class="row">
 
 								<div class="col-sm-4">
@@ -115,10 +115,10 @@ if(FORM_DEBUG===TRUE){
 
 							<!-- Описание запчасти -->
 							<div class="form-group has-feedback">
-								<label for="additional_field" class="control-label">Описание запчасти *</label>
-								<textarea id="additional_field" name="additional_field" class="form-control"
+								<label for="description_goods" class="control-label">Описание запчасти *</label>
+								<textarea id="description_goods" name="description_goods" class="form-control"
 									rows="3" value="" placeholder="Описание запчасти" minlength="20"
-									maxlength="500" required="required"><?php echo "$val_additional_field";?></textarea>
+									maxlength="500" required="required"><?php echo "$val_description_goods";?></textarea>
 							</div>
 
 							<!-- Сообщение пользователя -->
