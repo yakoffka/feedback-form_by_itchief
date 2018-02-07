@@ -1,0 +1,93 @@
+/process/process.php 68: var $data['result']='success';
+/process/process.php 74: var $_POST['phone']='+7(928)000-00-00';
+/process/process.php 76: var $phone='79280000000';
+/process/process.php 87: var $data['result']='success';
+/process/process.php 103: var $data['result']='success';
+/process/process.php 119: var $data['result']='success';
+/process/process.php 134: var $data['result']='success';
+/process/process.php 162: var $data['result']='success';
+/process/process.php 177: var $data['result']='success';
+/process/process.php 182: var $_FILES='Array
+(
+    [attachment] => Array
+        (
+            [name] => Array
+                (
+                    [0] => pattern-simple-numbers-on-blackboard-background.jpg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => /home/arch/tmp/phpger7PK
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 343260
+                )
+
+        )
+
+)
+';
+/process/process.php 184: var $_FILES='Array
+(
+    [attachment] => Array
+        (
+            [name] => Array
+                (
+                    [0] => pattern-simple-numbers-on-blackboard-background.jpg
+                )
+
+            [type] => Array
+                (
+                    [0] => image/jpeg
+                )
+
+            [tmp_name] => Array
+                (
+                    [0] => /home/arch/tmp/phpger7PK
+                )
+
+            [error] => Array
+                (
+                    [0] => 0
+                )
+
+            [size] => Array
+                (
+                    [0] => 343260
+                )
+
+        )
+
+)
+';
+/process/process.php 213: var $data['result']='success';
+/process/process.php 218: var $data['result']='success';
+/process/process.php 242: var $path_rand_dir='/home/arch/web/xn--80apaahia1b8c.xn--p1ai.dragoon.pw/public_html/uploads/45mhao';
+/process/process.php 250: var $mess='директория $path_rand_dir создана';
+/process/process.php 269: var $data['result']='success';
+/process/process.php 356: var $data['result']='success';
+/process/process.php: 426
+/process/process.php: 434
+/process/process.php: 449
+/process/process.php: 451
+/process/process.php: 461
+/process/process.php: 464
+/process/process.php: 470
+/process/process.php: 472
+/process/process.php: 496
+/process/process.php 504: var $data['result']='success';
+/process/process.php 531: var $data['result']='success';
+/process/process.php 534: var $json_encode($data)='{"result":"success"}';

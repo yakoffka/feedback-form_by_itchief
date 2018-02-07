@@ -400,3 +400,23 @@
 	border-right:6px solid transparent;
 	border-bottom:6px solid #be2626;
 }
+
+
+
+/*	yo	*/
+	.dropzone {
+		border: 2px dashed #0087F7;
+		border-radius: 5px;
+		background: white;
+	}
+	.dropzone .dz-message {
+		text-align: center;
+		margin: 2em 0;
+		font-size: 20px;
+	}
+	.dz-progress {
+		display: none !important;
+	}
+	.dropzone .dz-preview .dz-image {
+		border-radius: 4px;
+	}

@@ -1,84 +1,46 @@
-<!DOCTYPE html><?php /*оригинал: https://itchief.ru/lessons/php/feedback-form-for-website*/?>
+<!DOCTYPE html>
+<?php /*оригинал: https://itchief.ru/lessons/php/feedback-form-for-website*/
+	$name_script=$_SERVER['PHP_SELF'];// получим имя скрипта для использовании в логировании
+	// подключаем конфигурационный файл:
+	$file_templ_conf="config.php.template";
+	$file_conf="config.php";
+	if(file_exists($file_conf)){
+		require_once($file_conf);
+	}elseif(file_exists($file_templ_conf)){
+		echo "<h3 class='warning_feedback'>пожалуйста переименуйте файл '$file_templ_conf' в '$file_conf' и произведите в нем необходимые настройки.</h2>";
+	}else{
+		echo "<h3 class='alert_feedback'>не найден конфигурационный файл. пожалуйста перезалейте скрипт.</h2>";
+	}
+?>
 <html lang='ru'>
 <head>
 	<meta charset='utf-8'>
-	<title>Форма обратной связи</title>
+	<title><?php echo $page_title;?></title>
 	<link rel='stylesheet' href='vendors/bootstrap/css/bootstrap.min.css'>
 	<link rel='stylesheet' href='vendors/jgrowl/jquery.jgrowl.min.css'>
-	<link rel='stylesheet' href='css/dropzone.css'>
+	<link rel='stylesheet' href='vendors/dropzone/dropzone.css'>
 	<link rel='stylesheet' href='css/main.css'>
   <style>
-    .dropzone {
-      border: 2px dashed #0087F7;
-      border-radius: 5px;
-      background: white;
-    }
-    .dropzone .dz-message {
-      text-align: center;
-      margin: 2em 0;
-	  font-size: 20px;
-    }
-    .dz-progress {
-      display: none !important;
-    }
-    .dropzone .dz-preview .dz-image {
-      border-radius: 4px;
-	 }
   </style>
 	
 	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
 </head>
 <body>
-
-
-<?php
-// подключаем конфигурационный файл:
-$file_templ_conf="config.php.template";
-$file_conf="config.php";
-if(file_exists($file_conf)){
-	require_once($file_conf);
-}elseif(file_exists($file_templ_conf)){
-	echo "<h3 class='warning_feedback'>пожалуйста переименуйте файл '$file_templ_conf' в '$file_conf' и произведите в нем необходимые настройки.</h2>";
-}else{
-	echo "<h3 class='alert_feedback'>не найден конфигурационный файл. пожалуйста перезалейте скрипт.</h2>";
-}
-
-
-// присвоение плейсхолдеров при включенном режим отладки
-if(FORM_DEBUG===TRUE){
-	$val_name="Яков";
-	$val_phone="+7(928)000-00-00";
-	$val_email="yakoffka@mail.ru";
-	$val_car_brand="ВАЗ";
-	$val_vin="1ZVHT82H485113456";
-	$val_description_goods="Реле стартера втягивающее WA66-113-SL или аналог";
-	$val_captcha="aaaaaa";
-}else{
-	$val_name="";
-	$val_phone="";
-	$val_email="";
-	$val_car_brand="";
-	$val_vin="";
-	$val_description_goods="";
-	$val_captcha="";
-}
-?>
-
 	<!--div class='container'-->
 	<div class='center'>
 		<!--div class='row'-->
 		<div class=''>
 			<!--div class='col-sm-6 col-sm-offset-3'-->
 			<div class='col-sm-9'>
-				<h1 class='text-center page-header'>Форма обратной связи</h1>
+				<h1 class='text-center page-header'><?php echo $page_title;?></h1>
 				<div class='panel panel-success'>
 					<div class='panel-heading'>
-						<h2 class='h3 panel-title'>форма запроса детали по VIN</h2>
+						<h2 class='h3 panel-title'><?php echo $panel_title;?></h2>
 					</div>
 					<div class='panel-body'>
 
 						<!-- Форма обратной связи -->
-						<form id='feedbackForm' action='process.php' enctype='multipart/form-data' novalidate>
+						<form id='feedbackForm' action='process/process.php' enctype='multipart/form-data' novalidate>
 							<div class='row'>
 
 								<div class='col-sm-4'>
@@ -149,15 +111,30 @@ if(FORM_DEBUG===TRUE){
 							</div-->
 
 							<!-- Файлы, для прикрепления к форме -->
-							<div class='form-group'>
-								<p style='font-weight: 700; margin-bottom: 0;'>Прикрепить к сообщению файлы (до <span
-									class='countFiles'></span>):</p>
-								<p class='small success'>jpg, jpeg, bmp, gif, png (до 512 Кбайт)</p>
-								<div class='attachments'>
-									<input type='file' name='attachment[]'>
-									<p style='margin-top: 3px; margin-bottom: 3px; color: #ff0000;'></p>
-								</div>
-							</div>
+							<?php
+							if($use_dropzone){
+								echo "
+									<div class='form-group' id='mydropzone'>
+										<!--input type='file' name='images[]' style='display: none !important;'--><!-- с этим классом почему-то $_FILES='[images][error][0]=> 4.. даже без добавления изображений...-->
+										<!--input type='file' name='img_dropzone[]' style='display: none !important;'-->
+										<input type='file' name='attachment[]' style='display: none !important;'>
+									</div>
+								";
+							}else{
+								echo "
+									<div class='form-group'>
+										<p style='font-weight: 700; margin-bottom: 0;'>Прикрепить к сообщению файлы (до <span
+											class='countFiles'></span>):</p>
+										<p class='small success'>jpg, jpeg, bmp, gif, png (до 512 Кбайт)</p>
+										<div class='attachments'>
+											<input type='file' name='attachment[]'>
+											<p style='margin-top: 3px; margin-bottom: 3px; color: #ff0000;'></p>
+										</div>
+									</div>
+								";
+							}
+
+							?>
 
 							<!-- Капча -->
 							<div class='captcha'>
@@ -211,7 +188,8 @@ if(FORM_DEBUG===TRUE){
 
 	<!--script src='vendors/jquery/jquery-3.2.1.min.js'></script-->
 	<script src='vendors/bootstrap/js/bootstrap.min.js'></script>
-  <script src='js/dropzone.js'></script>
+  <script src='vendors/dropzone/dropzone.js'></script>
+  <!--script src='js/mydropzone.js'></script-->
 	<script src='vendors/jgrowl/jquery.jgrowl.min.js'></script>
 	<script src='js/main.js'></script>
 	<!--script src='vendors/mask/jquery.mask.min.js\'></script-->
