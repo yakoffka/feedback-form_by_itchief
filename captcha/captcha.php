@@ -72,6 +72,8 @@ if(isset($_GET['id'])){// yo: а это откуда возьмется, я из
 	$captchastring=""; $i=0;
 	while($i<CAPCHA_NUM){// набор необходимого количества символов
 		$angle=rand(-CAPCHA_ANGLE,CAPCHA_ANGLE);// случайное число между -CAPCHA_ANGLE и CAPCHA_ANGLE градусов для поворота текста
+		
+		// сделать проверку на заглавную букву (вернее на широкую)
 		$x=$x+CAPCHA_SPACING-CAPCHA_S_X;// начальная координата x
 		$y=$y_+rand(-$size/5,$size/5)-CAPCHA_S_Y;// начальная координата y
 		$captcha_letter=substr(str_shuffle($string),0,1);

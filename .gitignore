@@ -50,7 +50,7 @@
 
 # игнорирование файла
 /example_ignored.bmp
-#/config.php
+/config.php
 
 # игнорирование директории, находящейся в корне
 /info/*
