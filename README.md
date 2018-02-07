@@ -8,8 +8,11 @@
 	</li>
 </ul>
 	
-	<!--<p>Небольшой апгрейд <a href='https://itchief.ru/lessons/php/feedback-form-for-website'>формы обратной связи для сайта с отправкой на почту</a> от Александра Мальцева</p>-->
-	<p>Оригинал здесь: <a href='https://github.com/itchief/feedback-form'>itchief/feedback-form</a></p-->
+	<!-- <p>
+	ДА КТО ВАМ СКАЗАЛ, ЧТО ЭТО КОД???
+	ГДЕ ВЫ ВИДИТЕ <PRE>?????
+	Небольшой апгрейд <a href='https://itchief.ru/lessons/php/feedback-form-for-website'>формы обратной связи для сайта с отправкой на почту</a> от Александра Мальцева</p>-->
+	<p>Оригинал здесь: <a href='https://github.com/itchief/feedback-form'>itchief/feedback-form</a></p>-->
 
 <h3 style='color:rgb(15, 148, 215);'>собственно, плюшки:</h3>
 	<ol>
