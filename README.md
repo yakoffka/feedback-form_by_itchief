@@ -1,7 +1,15 @@
 # feedback-form_by_itchief
 
-<p>Небольшой апгрейд <a href='https://itchief.ru/lessons/php/feedback-form-for-website'>формы обратной связи для сайта с отправкой на почту</a> от Александра Мальцева</p>
-<p>Оригинал здесь: <a href='https://github.com/itchief/feedback-form'>itchief/feedback-form</a></p>
+<h1>Небольшой апгрейд формы обратной связи для сайта с отправкой на почту от Александра Мальцева</h1>
+<ul>
+	<li><a href='https://github.com/itchief/feedback-form'>itchief/feedback-form на github.com</a>
+	</li><li><a href='https://yadi.sk/d/YcF2Qwwf3KxxQy'>архив исходника</a>
+	</li><li><a href='https://itchief.ru/lessons/php/feedback-form-for-website'>описание на сайте itchief.ru</a>
+	</li>
+</ul>
+	
+	<!--p>Небольшой апгрейд <a href='https://itchief.ru/lessons/php/feedback-form-for-website'>формы обратной связи для сайта с отправкой на почту</a> от Александра Мальцева</p>
+	<p>Оригинал здесь: <a href='https://github.com/itchief/feedback-form'>itchief/feedback-form</a></p-->
 
 <h3 style='color:rgb(15, 148, 215);'>собственно, плюшки:</h3>
 	<ol>
