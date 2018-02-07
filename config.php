@@ -14,7 +14,7 @@
 	// полный путь от корня файловой системы к директории для хранения загружаемых файлов
 	$patch_uploads_dir=dirname(__FILE__)."/uploads/";
 	// относительный путь к рандомным директориям от корневой директории скрипта
-	$rel_patch_uploads_dir='src/feedback/uploads/';
+	$rel_patch_uploads_dir="src/feedback/uploads/";
 	// директория для хранения логов
 	$patch_log_dir=dirname(__FILE__)."/logs/";
 	// полный путь от корня файловой системы к лог-файлу
@@ -24,13 +24,13 @@
 	$numfile_path=dirname(__FILE__)."/num.tmp";
 
 	// email отправителя
-	define("MAIL_FROM",'no-reply@'.$_SERVER['HTTP_HOST']);
+	define("MAIL_FROM","no-reply@".$_SERVER['HTTP_HOST']);
 	// имя отправителя
-	const MAIL_FROM_NAME='ЮгАвтоТрак';
+	define("MAIL_FROM_NAME","ЮгАвтоТрак");
 	// тема письма
-	const COMPANY='ООО ЮгАвтоТрак';
+	define("COMPANY","ООО ЮгАвтоТрак");
 	// тема письма
-	const PHONE='+7(863)000-00-00';
+	define("PHONE","+7(863)000-00-00");
 	// тема письма
 	$mail_subject="Поступил заказ №_replace_mess_numb от _replace_date";// тема письма
 	$mail_subject_client="Заказ №_replace_mess_numb от _replace_date принят.";// тема отчета о доставке сообщения
@@ -38,10 +38,10 @@
 	$domainname_utf8=(substr($_SERVER['HTTP_HOST'],0,4)=='xn--')?idn_to_utf8($_SERVER['HTTP_HOST']):$_SERVER['HTTP_HOST'];
 
 	// email адресата
-	//const MAIL_ADDRESS='yugautotruck@ya.ru';
-	const MAIL_ADDRESS='yakoffka@mail.ru';
-				// const MAIL_ADDRESS='web-on3wr@mail-tester.com';//https://www.mail-tester.com/web-mfs3g 10 из 10!!!
-				// const MAIL_ADDRESS='web-bwj58@mail-tester.com';// тестирование почты (Проверка тела письма на спам mail-tester.com)
+	//define("MAIL_ADDRESS","yugautotruck@ya.ru");
+	define("MAIL_ADDRESS","yakoffka@mail.ru");
+				// define("MAIL_ADDRESS","web-on3wr@mail-tester.com");//https://www.mail-tester.com/web-mfs3g 10 из 10!!!
+				// define("MAIL_ADDRESS","web-bwj58@mail-tester.com");// тестирование почты (Проверка тела письма на спам mail-tester.com)
 				
 				// проверка на письмо и отчет. и там и там 10!!
 				// https://www.mail-tester.com/web-prg9y	
@@ -54,7 +54,7 @@
 	$panel_title="Запрос детали по VIN";
 
 	// максимальный размер файла 512Кбайт (512*1024=524288)
-	// const MAX_FILE_SIZE=524288;
+	// define("MAX_FILE_SIZE=524288;
 	$name_block_1="описание узла или агрегата: ";
 	$name_fild_1="наименование: ";
 	$name_fild_2="прикрепленные файлы: ";
@@ -130,7 +130,7 @@
 // настройки формы:
 //--------------------------------------------------------------------------------------------------
 	// максимальный размер файла 512Кбайт (512*1024=524288)
-	const MAX_FILE_SIZE=524288;
+	define("MAX_FILE_SIZE","524288");
 	// разрешённые расширения файлов
 	$allowedExtensions=array('gif', 'jpg', 'png');
 
@@ -144,29 +144,44 @@
 // настройка капчи:
 //==================================================================================================
 	// режим
-	const CAPCHA_MODE='soft';// только строчные латинские буквы и цифры
-	// const CAPCHA_MODE='hard';// ПРОПИСНЫЕ и строчные латинские буквы и цифры. есть шанс спутать 'l' с 'I', '0' с 'O'
+	// define("CAPCHA_MODE","soft");// только строчные латинские буквы и цифры
+	define("CAPCHA_MODE","hard");// ПРОПИСНЫЕ и строчные латинские буквы и цифры. есть шанс спутать 'l' с 'I', '0' с 'O'
 	
-	// количество символов в капче и имени рандомной директории
+	// путь к фоновому изображению
 	// define("CAPCHA_PATTERN","pattern-simple-numbers-on-blackboard-background.jpg");
 	define("CAPCHA_PATTERN","school_pattern_02-280x235.jpg");
 	// количество символов в капче и имени рандомной директории
-	const CAPCHA_NUM=6;
+	define("CAPCHA_NUM","6");
 	// необходимые ширина и высота получаемого изображения
-	const CAPCHA_SIZE=25;// размер шрифта
+	define("CAPCHA_SIZE","25");// размер шрифта
 	// путь к шрифту TrueType
-	const CAPCHA_FONTFILE='Arbat.ttf';// размер шрифта
+	// define("CAPCHA_FONTFILE","monotipe_corsiva.ttf");
+	// define("CAPCHA_FONTFILE","georgia.ttf");
+	// define("CAPCHA_FONTFILE","oswald.ttf");
+	define("CAPCHA_FONTFILE","Arbat.ttf");
+	// define("CAPCHA_FONTFILE","Copyist.ttf");
+	// define("CAPCHA_FONTFILE","Harrington.ttf");
 	// необходимые ширина и высота получаемого изображения
-	const CAPCHA_W=152;
-	const CAPCHA_H=46;
+	define("CAPCHA_W",152);
+	define("CAPCHA_H",46);
 	// цвет текста
-	const CAPCHA_R=0;
-	const CAPCHA_G=56;
-	const CAPCHA_B=6;
+	define("CAPCHA_R",0);
+	define("CAPCHA_G",56);
+	define("CAPCHA_B",6);
 	// максимальный угол наклона текста, градусов
-	const CAPCHA_ANGLE=10;
+	define("CAPCHA_ANGLE",20);
 	// интервал между символами, в размере шрифта
 	define("CAPCHA_SPACING",CAPCHA_SIZE*5/6);
+
+	// цвет тени
+	define("CAPCHA_S_R",255);
+	define("CAPCHA_S_G",255);
+	define("CAPCHA_S_B",255);
+	// смещение тени
+	// define("CAPCHA_S_X",CAPCHA_SIZE/20);
+	// define("CAPCHA_S_Y",CAPCHA_SIZE/20);
+	define("CAPCHA_S_X",1);
+	define("CAPCHA_S_Y",1);
 
 
 
@@ -177,8 +192,8 @@
 // настройки режима отладки:
 //==================================================================================================
 // в режиме отладки генерируется капча "aaaaaa", всем полям присваивается плейсхолдеры (нет необходимости каждый раз заполнять поля вручную), 
-	const FORM_DEBUG=TRUE;
-	// const FORM_DEBUG=FALSE;
+	// define("FORM_DEBUG","TRUE;
+	define("FORM_DEBUG",FALSE);
 
 // присвоение плейсхолдеров при включенном режим отладки (вынести в общий массив с названиями полей, валидацией и прочим!!!)
 if(FORM_DEBUG===TRUE){

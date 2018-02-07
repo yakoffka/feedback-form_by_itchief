@@ -1,29 +1,32 @@
 <?php
-session_start();// открываем сессию
-require_once('../config.php');// подключаем конфигурационный файл:
+session_start();// открываем сессию. открывается в ../process/process.php
+require_once("../config.php");// подключаем конфигурационный файл:
+// require_once("../process/process.php");// подключаем конфигурационный файл:
 
 
-$id='captcha';
+$id="captcha";
 if(isset($_GET['id'])){// yo: а это откуда возьмется, я извиняюсь???
 	$id=filter_var($_GET['id'],FILTER_SANITIZE_STRING);
 }
 
 // присваиваем PHP переменной $string строку символов
 	if(FORM_DEBUG===TRUE){// присвоение $string в режиме отладки
-		$string='aaaaaa';
+		$string="aaaaaa";
 	}else{// присвоение $string в боевом режиме
-		if(CAPCHA_MODE==='soft'){
-			$string='1234567890abcdefghijklmnopqrstuvwxyz';
-		}elseif(CAPCHA_MODE==='hard'){
-			$string='ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnopqrstuvwxyz';
+		if(CAPCHA_MODE==="soft"){
+			$string="1234567890abcdefghijklmnopqrstuvwxyz";
+		}elseif(CAPCHA_MODE==="hard"){
+			$string="ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnopqrstuvwxyz";
 		}
 	}
+	// var_log($string,"string",__line__,$_SERVER['PHP_SELF']);
+
 
 
 // 		-------
 // получаем фон для нашего изображения, вырезав его из исходника
 	// нам нужен прямоугольник CAPCHA_WxCAPCHA_H (132х46)
-	list($w_src_im,$h_src_im,$type,$attr)=getimagesize("school_pattern_02-280x235.jpg");// получим параметры исходного изображения (фона)
+	list($w_src_im,$h_src_im,$type,$attr)=getimagesize(CAPCHA_PATTERN);// получим параметры исходного изображения (фона)
 
 	$src_im=imagecreatefromjpeg(CAPCHA_PATTERN);
 	$dst_im=imagecreatetruecolor(CAPCHA_W,CAPCHA_H);// создаем новое пустое полноцветное изображение
@@ -62,18 +65,21 @@ if(isset($_GET['id'])){// yo: а это откуда возьмется, я из
 	$size=CAPCHA_SIZE;// размер шрифта
 	$x=-1*CAPCHA_SPACING/2;// начальная координата x
 	$y_=32;// ордината оси y???
+	$color_shadow=imagecolorallocate($dst_im,CAPCHA_S_R,CAPCHA_S_G,CAPCHA_S_B);// цвет текста (rgb)
 	$color=imagecolorallocate($dst_im,CAPCHA_R,CAPCHA_G,CAPCHA_B);// цвет текста (rgb)
-	// $fontfile=dirname(__FILE__).'/oswald.ttf';// путь к шрифту TrueType
 	$fontfile=dirname(__FILE__).'/'.CAPCHA_FONTFILE;// путь к шрифту TrueType
 
-	$captchastring="";$i=0;
+	$captchastring=""; $i=0;
 	while($i<CAPCHA_NUM){// набор необходимого количества символов
-		$angle=rand(-10, 10);// случайное число между -10 и 10 градусов для поворота текста
-		$x=$x+CAPCHA_SPACING;// начальная координата x
-		$y=$y_+rand(-$size/4,$size/4);// начальная координата y
+		$angle=rand(-CAPCHA_ANGLE,CAPCHA_ANGLE);// случайное число между -CAPCHA_ANGLE и CAPCHA_ANGLE градусов для поворота текста
+		$x=$x+CAPCHA_SPACING-CAPCHA_S_X;// начальная координата x
+		$y=$y_+rand(-$size/5,$size/5)-CAPCHA_S_Y;// начальная координата y
 		$captcha_letter=substr(str_shuffle($string),0,1);
 		$captchastring=$captchastring.$captcha_letter;
-		imagettftext($dst_im,$size,$angle,$x,$y,$color,$fontfile,$captcha_letter);
+		imagettftext($dst_im,$size,$angle,$x,$y,$color_shadow,$fontfile,$captcha_letter);// отрисовываем тень
+		$x=$x+CAPCHA_S_X;// начальная координата x
+		$y=$y+CAPCHA_S_Y;// начальная координата y
+		imagettftext($dst_im,$size,$angle,$x,$y,$color,$fontfile,$captcha_letter);// отрисовываем символ
 		$i++;
 	}
 	unset($i,$string);
