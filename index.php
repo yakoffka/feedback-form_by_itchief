@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <?php /*оригинал: https://itchief.ru/lessons/php/feedback-form-for-website*/
+	// session_start();// открываем сессию. открывается в ../process/process.php
+	// $_SESSION['date']=date('l \t\h\e jS');
 	$name_script=$_SERVER['PHP_SELF'];// получим имя скрипта для использовании в логировании
 	// подключаем конфигурационный файл:
 	$file_templ_conf="config.php.template";
 	$file_conf="config.php";
+	$file_lib="lib.php";
+	
 	if(file_exists($file_conf)){
 		require_once($file_conf);
 	}elseif(file_exists($file_templ_conf)){
 		echo "<h3 class='warning_feedback'>пожалуйста переименуйте файл '$file_templ_conf' в '$file_conf' и произведите в нем необходимые настройки.</h2>";
-	}else{
-		echo "<h3 class='alert_feedback'>не найден конфигурационный файл. пожалуйста перезалейте скрипт.</h2>";
+	}else{echo "<h3 class='alert_feedback'>не найден конфигурационный файл. пожалуйста перезалейте скрипт.</h2>";}
+	require_once($file_lib);
+	var_log("\n","NEL",__line__,$_SERVER['PHP_SELF']);
+	var_log($file_conf,"file_conf",__line__,$_SERVER['PHP_SELF']);
+
+	// если от предыдущей сессии остался временный файл, то удалим его.
+	if(file_exists(CAPTCHA_TMP)){
+		unlink(CAPTCHA_TMP);
 	}
+
+
 ?>
+
 <html lang='ru'>
 <head>
 	<meta charset='utf-8'>
@@ -115,7 +128,7 @@
 							if($use_dropzone){
 								echo "
 									<div class='form-group' id='mydropzone'>
-										<!--input type='file' name='images[]' style='display: none !important;'--><!-- с этим классом почему-то $_FILES='[images][error][0]=> 4.. даже без добавления изображений...-->
+										<!--input type='file' name='images[]' style='display: none !important;'--><!-- с этим классом почему-то \$_FILES='[images][error][0]=> 4.. даже без добавления изображений...-->
 										<!--input type='file' name='img_dropzone[]' style='display: none !important;'-->
 										<input type='file' name='attachment[]' style='display: none !important;'>
 									</div>
@@ -145,15 +158,33 @@
 								<div class='form-group has-feedback' style='margin-top: 10px;'>
 									<label for='captcha' class='control-label'>Код, показанный на изображении</label>
 									<input type='text' name='captcha' maxlength='6' required='required' id='captcha'
-										class='form-control captcha' placeholder='******' autocomplete='off' value='<?php echo "$val_captcha";?>'>
+										class='form-control captcha' placeholder='<?php
+										var_log("рисуем placeholder_captcha","mess",__line__,$_SERVER['PHP_SELF']);
+										$placeholder_captcha="";
+										$i=0;
+										while($i<CAPCHA_NUM){
+											$placeholder_captcha=$placeholder_captcha.'*';// набор необходимого количества символов
+											$i++;
+										}
+										echo "$placeholder_captcha";
+										unset($i,$placeholder_captcha);
+									?>' autocomplete='off' value='<?php
+										if(FORM_DEBUG===TRUE){
+											if(file_exists(CAPTCHA_TMP)){
+												require_once(CAPTCHA_TMP);
+											}else{$captchastring="";}
+										}
+										echo $captchastring;
+									?>'>
 									<span class='glyphicon form-control-feedback'></span>
 								</div>
 							</div>
 
+							
 							<!-- Пользовательское солашение -->
 							<div class='checkbox'>
 								<label>
-									<input type='checkbox' name='agree'> Нажимая кнопку, я принимаю условия
+									<input type='checkbox' name='agree'>Нажимая кнопку, я принимаю условия
 									<a href='#'>Пользовательского соглашения</a> и даю своё согласие на обработку моих
 									персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О
 									персональных

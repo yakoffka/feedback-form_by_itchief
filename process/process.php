@@ -1,35 +1,9 @@
 <?php
 //==================================================================================================
-// функция для проверки количества символов в тексте.
-//--------------------------------------------------------------------------------------------------
-function checkTextLength($text,$minLength,$maxLength){
-	$result=false;
-	$textLength=mb_strlen($text,'UTF-8');
-	if(($textLength>=$minLength) && ($textLength<=$maxLength)){
-		$result=true;
-	}
-	return $result;
-}
-
-// функция логирования выполнения скрипта. пример вызова: str_log(__line__,$_SERVER['PHP_SELF'])
-//--------------------------------------------------------------------------------------------------
-function str_log($line,$name_script){if(FORM_DEBUG){file_put_contents(PATCH_LOG_FILE,"$name_script: $line\r\n",FILE_APPEND);};}
-
-// функция записи интерпретируемого строкового представления переменной в лог.
-//--------------------------------------------------------------------------------------------------
-function var_log($var,$name,$line,$name_script){
-	if(FORM_DEBUG){
-		$result="$name_script $line: var \$$name='".print_r($var,true)."';\n";
-		$fp=fopen(PATCH_LOG_FILE,'a');
-		fwrite($fp,"$result");
-		fclose($fp);
-	}
-}
-
-//==================================================================================================
 // подключаем файл настроек
 // require_once dirname(__FILE__).'/process_settings.php';
 require_once('../config.php');
+require_once('../lib.php');
 // открываем сессию
 session_start();
 // вводим переменную, содержащую основной статус обработки формы
@@ -165,8 +139,8 @@ var_log($data['result'],"data['result']",__line__,$_SERVER['PHP_SELF']);
 // 		-------
 // валидация капчи
 if(isset($_POST['captcha']) && isset($_SESSION['captcha'])){
-	$captcha=filter_var($_POST['captcha'], FILTER_SANITIZE_STRING); // защита от XSS
-	if($_SESSION['captcha']!=$captcha){ // проверка капчи
+	$captcha=filter_var($_POST['captcha'],FILTER_SANITIZE_STRING); // защита от XSS
+	if($_SESSION['captcha']!=$captcha){// проверка капчи
 		$data['captcha']='Вы неправильно ввели код с картинки';
 		$data['result']='error';
 	}

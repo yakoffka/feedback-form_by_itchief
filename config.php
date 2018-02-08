@@ -1,7 +1,7 @@
 <?php
 // выбор механизма прикрепления файлов
-	// $use_dropzone=TRUE;
-	$use_dropzone=FALSE;
+	$use_dropzone=TRUE;
+	// $use_dropzone=FALSE;
 
 
 //==================================================================================================
@@ -15,6 +15,8 @@
 	$patch_uploads_dir=dirname(__FILE__)."/uploads/";
 	// относительный путь к рандомным директориям от корневой директории скрипта
 	$rel_patch_uploads_dir="src/feedback/uploads/";
+	// путь к временной директории
+	$patch_tmp_dir=dirname(__FILE__)."/tmp/";
 	// директория для хранения логов
 	$patch_log_dir=dirname(__FILE__)."/logs/";
 	// полный путь от корня файловой системы к лог-файлу
@@ -151,27 +153,28 @@
 	// define("CAPCHA_PATTERN","pattern-simple-numbers-on-blackboard-background.jpg");
 	define("CAPCHA_PATTERN","school_pattern_02-280x235.jpg");
 	// количество символов в капче и имени рандомной директории
-	define("CAPCHA_NUM","6");
+	define("CAPCHA_NUM","6");//6
 	// необходимые ширина и высота получаемого изображения
-	define("CAPCHA_SIZE","25");// размер шрифта
+	define("CAPCHA_SIZE","22");// размер шрифта
 	// путь к шрифту TrueType
+	// define("CAPCHA_FONTFILE","Arbat.ttf");
 	// define("CAPCHA_FONTFILE","monotipe_corsiva.ttf");
-	// define("CAPCHA_FONTFILE","georgia.ttf");
+	define("CAPCHA_FONTFILE","georgia.ttf");
 	// define("CAPCHA_FONTFILE","oswald.ttf");
-	define("CAPCHA_FONTFILE","Arbat.ttf");
 	// define("CAPCHA_FONTFILE","Copyist.ttf");
 	// define("CAPCHA_FONTFILE","Harrington.ttf");
 	// необходимые ширина и высота получаемого изображения
-	define("CAPCHA_W",152);
-	define("CAPCHA_H",46);
+	define("CAPCHA_W",160);//160
+	define("CAPCHA_H",50);
 	// цвет текста
 	define("CAPCHA_R",0);
 	define("CAPCHA_G",56);
 	define("CAPCHA_B",6);
 	// максимальный угол наклона текста, градусов
-	define("CAPCHA_ANGLE",20);
+	define("CAPCHA_ANGLE",10);
 	// интервал между символами, в размере шрифта
-	define("CAPCHA_SPACING",CAPCHA_SIZE*5/6);
+	// define("CAPCHA_SPACING",CAPCHA_SIZE*1/9);
+	define("CAPCHA_SPACING",0);
 
 	// цвет тени
 	define("CAPCHA_S_R",255);
@@ -192,19 +195,19 @@
 // настройки режима отладки:
 //==================================================================================================
 // в режиме отладки генерируется капча "aaaaaa", всем полям присваивается плейсхолдеры (нет необходимости каждый раз заполнять поля вручную), 
-	// define("FORM_DEBUG","TRUE;
-	define("FORM_DEBUG",FALSE);
+	define("FORM_DEBUG",TRUE);
+	// define("FORM_DEBUG",FALSE);
 
 // присвоение плейсхолдеров при включенном режим отладки (вынести в общий массив с названиями полей, валидацией и прочим!!!)
 if(FORM_DEBUG===TRUE){
+	define("CAPTCHA_TMP",$patch_tmp_dir."val_captcha.php");// иначе не получается вызвать актуальное значение $captchastring ()
+	
 	$val_name="Яков";
 	$val_phone="+7(928)000-00-00";
 	$val_email="yakoffka@mail.ru";
 	$val_car_brand="ВАЗ";
 	$val_vin="1ZVHT82H485113456";
 	$val_description_goods="Реле стартера втягивающее WA66-113-SL или аналог";
-	$val_captcha="";
-	$i=0;while($i<CAPCHA_NUM){$val_captcha=$val_captcha.'a';$i++;}unset($i,$string);// набор необходимого количества символов
 }else{
 	$val_name="";
 	$val_phone="";
@@ -212,5 +215,4 @@ if(FORM_DEBUG===TRUE){
 	$val_car_brand="";
 	$val_vin="";
 	$val_description_goods="";
-	$val_captcha="";
 }
