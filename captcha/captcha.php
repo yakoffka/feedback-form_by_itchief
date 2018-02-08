@@ -25,11 +25,15 @@ if(isset($_GET['id'])){// yo: а это откуда возьмется, я из
 */
 
 // присваиваем переменной $string строку возможных символов
+	if(FORM_DEBUG===TRUE){
+		$string="a";
+	}else{
 		if(CAPCHA_MODE==="soft"){
 			$string="1234567890abcdefghijklmnopqrstuvwxyz";
 		}elseif(CAPCHA_MODE==="hard"){
 			$string="ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmnopqrstuvwxyz";
 		}
+	}
 	// var_log($string,"string",__line__,$_SERVER['PHP_SELF']);
 
 
@@ -131,7 +135,7 @@ if(isset($_GET['id'])){// yo: а это откуда возьмется, я из
 	// переменные для первого символа
 	$y_bl=CAPCHA_H/2+CAPCHA_SIZE/2;// ордината базовой линии текста
 	$size=CAPCHA_SIZE;// размер шрифта
-	$x=CAPCHA_SIZE/30*rand(5,15);// начальная координата x первого символа: три-пять пробелов
+	$x=CAPCHA_SIZE/30*rand(10,25);// начальная координата x первого символа: три-пять пробелов
 	$y=$y_bl+rand(-$size/5,$size/5);// начальная координата y первого символа: ордината базовой линии текста +- 1/5 высоты шрифта
 	$x_=$x+CAPCHA_S_X;// начальная координата x тени
 	$y_=$y+CAPCHA_S_Y;// начальная координата y тени
@@ -145,21 +149,21 @@ if(isset($_GET['id'])){// yo: а это откуда возьмется, я из
 
 	$captchastring=""; $i=0;
 	while($i<CAPCHA_NUM){// набор необходимого количества символов
-		var_log("","NEL",__line__,$_SERVER['PHP_SELF']);
 
 		$captcha_letter=substr(str_shuffle($string),0,1);
 		$captchastring=$captchastring.$captcha_letter;
-		var_log("координаты символа №$i $captcha_letter($x,$y)","mess",__line__,$_SERVER['PHP_SELF']);
+			// var_log("","NEL",__line__,$_SERVER['PHP_SELF']);
+			// var_log("координаты символа №$i $captcha_letter($x,$y)","mess",__line__,$_SERVER['PHP_SELF']);
 
 		imagettftext($dst_im,$size,$angle,$x_,$y_,$color_shadow,$fontfile,$captcha_letter);// отрисовываем тень
 		imagettftext($dst_im,$size,$angle,$x,$y,$color,$fontfile,$captcha_letter);// отрисовываем символ
-			var_log("captcha_letter='$captcha_letter'","mess",__line__,$_SERVER['PHP_SELF']);
-			var_log("coord='$x,$y'","mess",__line__,$_SERVER['PHP_SELF']);
-			var_log("angle='$angle'","mess",__line__,$_SERVER['PHP_SELF']);
+			// var_log("captcha_letter='$captcha_letter'","mess",__line__,$_SERVER['PHP_SELF']);
+			// var_log("coord='$x,$y'","mess",__line__,$_SERVER['PHP_SELF']);
+			// var_log("angle='$angle'","mess",__line__,$_SERVER['PHP_SELF']);
 
 		// получаем координаты следующего символа
 		$bbox=imagettfbbox($size,$angle,$fontfile,$captcha_letter);
-			var_log($bbox,"bbox",__line__,$_SERVER['PHP_SELF']);
+			// var_log($bbox,"bbox",__line__,$_SERVER['PHP_SELF']);
 	
 		// angle>0 против часовой
 		if($angle>0){// если угол предыдущего символа > 0, то абсцисса нижнего левого угла больше абсциссы верхнего угла
@@ -204,11 +208,8 @@ if(isset($_GET['id'])){// yo: а это откуда возьмется, я из
 	
 // инициализируем переменную сессии с помощью сгенерированной подстроки $captchastring, содержащей 6 символов
 $_SESSION[$id]=$captchastring;
+var_log("captchastring='$captchastring'","mess",__line__,$_SERVER['PHP_SELF']);
 	
-	if(FORM_DEBUG===TRUE){// раскрываем карты в режиме отладки.. но о-о-о-о-чень медленно
-		// записываем значение переменной $captchastring в файл CAPTCHA_TMP
-		file_put_contents(CAPTCHA_TMP,"<?php\n\$captchastring='$captchastring';");
-	}
 
 // выводим изображение
 	header('Content-type: image/png');

@@ -5,16 +5,6 @@
 
 // после загрузки веб-страницы
 $(function () {
-	// + Dropzone
-	var isset_mydropzone=document.getElementById('mydropzone');
-	if(isset_mydropzone){
-		Dropzone.autoDiscover=false;
-		$('#mydropzone').addClass('dropzone');
-		var mydropzone=new Dropzone('#mydropzone',{
-			paramName:'attachment[]',method:'files',url:'../process/process.php',autoProcessQueue:false,dictDefaultMessage:'для добавления вложений кликните здесь или просто перетащите файлы сюда<span class="glyphicon form-control-feedback glyphicon-paperclip"></span>',addRemoveLinks:true,dictRemoveFile:'Удалить'
-		});
-	}
-	// + Dropzone
 
 	var ProcessForm=function (parameters) {
 
@@ -54,6 +44,35 @@ $(function () {
 				$(document).on('change', '#' + this.idForm + ' input[name="attachment[]"]', $.proxy(this.changeInputFile, this));
 			}
 			*/
+			
+			
+			
+			
+			// var isset_mydropzone=document.getElementById('mydropzone');
+			// if(isset_mydropzone){
+				// Dropzone.autoDiscover=false;
+				// $('#mydropzone').addClass('dropzone');
+				// var mydropzone=new Dropzone('#mydropzone',{
+					// paramName:'attachment[]',method:'files',url:'random.php',autoProcessQueue:false,dictDefaultMessage:'для добавления вложений кликните здесь или просто перетащите файлы сюда<span class="glyphicon form-control-feedback glyphicon-paperclip"></span>',addRemoveLinks:true,dictRemoveFile:'Удалить'
+				// });
+			// }
+			
+			Dropzone.autoDiscover = false;
+			$('#mydropzone').addClass('dropzone');
+			var mydropzone = new Dropzone('#mydropzone',{
+				// paramName: 'images[]',
+				paramName: 'attachment[]',
+				method: 'files',
+				url: 'nonexistent.php',// подсовываем что-нибудь для отключенной нами (Dropzone.autoDiscover = false;) обработки файлов на сервере
+				autoProcessQueue: false,
+				dictDefaultMessage: 'Файлы для загрузки',
+				addRemoveLinks: true,
+				dictRemoveFile: 'Удалить'
+			});
+			// + Dropzone
+
+
+
 
 			if (!this.disableAgreement) {
 				$(document).on('change', '#' + this.idForm + ' input[name="agree"]', $.proxy(this.changeAgreement, this));
@@ -144,6 +163,7 @@ $(function () {
 		}
 	};
 
+	/* 	
 	// disabled и enabled изображений для FormData
 	ProcessForm.prototype.changeStateImages=function (state) {
 		if (!this.existenceUploadsFile) {
@@ -163,6 +183,53 @@ $(function () {
 					$(files[i]).prop('disabled', state);
 				}
 			} else {
+				$(files[i]).prop('disabled', state);
+			}
+		}
+	};
+	*/
+
+
+	/* кусок из обработчика предыдущей версии
+	// добавить в formData файлы
+	var fileList = mydropzone.files;
+	// если элемент не содержит файлов, то перейти к следующей
+	if (fileList.length > 0) {
+		var count = fileList.length;
+		for (var i = 0; i < count; i++) {
+			formData.append('images[]', fileList[i], fileList[i].name);
+		}
+	}
+	*/
+
+	// disabled и enabled изображений для FormData
+	ProcessForm.prototype.changeStateImages=function (state) {
+		if (!this.existenceUploadsFile) {
+			return;
+		}
+		var submitForm=document.getElementById(this.idForm);
+		var files=$(submitForm).find('[name="attachment[]"]');
+		for (var i=0; i < files.length; i++) {
+			// получить список файлов элемента input с type="file"
+			// var fileList=files[i].files;
+			var fileList = mydropzone.files;
+			// если элемент не содержит файлов, то перейти к следующему
+				/*if (fileList.length > 0) {
+				// получить первый файл из списка
+				var file=fileList[0];
+				// проверить тип файла и размер
+				if (!((this.validateFileExtension(file.name)) && (file.size < this.maxSizeFile))) {
+					$(files[i]).prop('disabled', state);
+				}
+			} else {
+				$(files[i]).prop('disabled', state);
+			}*/ 
+			if (fileList.length > 0) {
+        var count = fileList.length;
+        for (var i = 0; i < count; i++) {
+          formData.append('images[]', fileList[i], fileList[i].name);
+        }
+      } else {
 				$(files[i]).prop('disabled', state);
 			}
 		}

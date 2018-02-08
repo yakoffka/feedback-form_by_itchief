@@ -15,13 +15,16 @@
 	}else{echo "<h3 class='alert_feedback'>не найден конфигурационный файл. пожалуйста перезалейте скрипт.</h2>";}
 	require_once($file_lib);
 	var_log("\n","NEL",__line__,$_SERVER['PHP_SELF']);
-	var_log($file_conf,"file_conf",__line__,$_SERVER['PHP_SELF']);
+	var_log("\n","NEL",__line__,$_SERVER['PHP_SELF']);
+	var_log("------------------------------------------------------------","mess",__line__,$_SERVER['PHP_SELF']);
+	var_log("загрузка index.php","mess",__line__,$_SERVER['PHP_SELF']);
+	// var_log($file_conf,"file_conf",__line__,$_SERVER['PHP_SELF']);
 
-	// если от предыдущей сессии остался временный файл, то удалим его.
+/* 	// если от предыдущей сессии остался временный файл, то удалим его.
 	if(file_exists(CAPTCHA_TMP)){
 		unlink(CAPTCHA_TMP);
 	}
-
+ */	
 
 ?>
 
@@ -128,7 +131,7 @@
 							if($use_dropzone){
 								echo "
 									<div class='form-group' id='mydropzone'>
-										<!--input type='file' name='images[]' style='display: none !important;'--><!-- с этим классом почему-то \$_FILES='[images][error][0]=> 4.. даже без добавления изображений...-->
+										<!--input type='file' name='images[]' style='display: none !important;'-->
 										<!--input type='file' name='img_dropzone[]' style='display: none !important;'-->
 										<input type='file' name='attachment[]' style='display: none !important;'>
 									</div>
@@ -159,7 +162,7 @@
 									<label for='captcha' class='control-label'>Код, показанный на изображении</label>
 									<input type='text' name='captcha' maxlength='6' required='required' id='captcha'
 										class='form-control captcha' placeholder='<?php
-										var_log("рисуем placeholder_captcha","mess",__line__,$_SERVER['PHP_SELF']);
+										// var_log("рисуем placeholder_captcha","mess",__line__,$_SERVER['PHP_SELF']);
 										$placeholder_captcha="";
 										$i=0;
 										while($i<CAPCHA_NUM){
@@ -169,12 +172,7 @@
 										echo "$placeholder_captcha";
 										unset($i,$placeholder_captcha);
 									?>' autocomplete='off' value='<?php
-										if(FORM_DEBUG===TRUE){
-											if(file_exists(CAPTCHA_TMP)){
-												require_once(CAPTCHA_TMP);
-											}else{$captchastring="";}
-										}
-										echo $captchastring;
+										if(FORM_DEBUG===TRUE){echo $val_captcha;};
 									?>'>
 									<span class='glyphicon form-control-feedback'></span>
 								</div>

@@ -21,7 +21,7 @@
 	$patch_log_dir=dirname(__FILE__)."/logs/";
 	// полный путь от корня файловой системы к лог-файлу
 	// $patch_log_file="$patch_log_dir".date('Y_m_d__H_i_s');
-	define("PATCH_LOG_FILE","$patch_log_dir".date('Y_m_d__H_i_s'));
+	define("PATCH_LOG_FILE","$patch_log_dir".date('Y_m_d'));
 	// путь к файлу с нумерацией
 	$numfile_path=dirname(__FILE__)."/num.tmp";
 
@@ -208,6 +208,7 @@ if(FORM_DEBUG===TRUE){
 	$val_car_brand="ВАЗ";
 	$val_vin="1ZVHT82H485113456";
 	$val_description_goods="Реле стартера втягивающее WA66-113-SL или аналог";
+	$val_captcha="";$i=0;while($i<CAPCHA_NUM){$val_captcha=$val_captcha.'a';$i++;}// набор необходимого количества символов
 }else{
 	$val_name="";
 	$val_phone="";
